@@ -1,9 +1,10 @@
 const btnSearch = document.getElementById('btnSearch');
 const btnReset = document.getElementById('btnReset');
- const resultDiv = document.getElementById('result');
+const resultDiv = document.getElementById('result');
+const inputSearch = document.getElementById('travelInput');
 
 function searchRecommendation() {
-    const input = document.getElementById('travelInput').value.toLowerCase();
+    const input = inputSearch.value.toLowerCase();
     resultDiv.innerHTML = '';
 
     fetch('travel_recommendation_api.json')
@@ -47,6 +48,7 @@ function searchRecommendation() {
 
 function resetResults(){
     resultDiv.innerHTML = '';
+    inputSearch.value = "";
 }
 
 btnSearch.addEventListener('click', searchRecommendation);
