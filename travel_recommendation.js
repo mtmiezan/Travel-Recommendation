@@ -18,14 +18,16 @@ function searchRecommendation() {
                 if(isCountryKey){
                     data[recommendation].forEach(country => {
                         country.cities.forEach(city =>{
-                        resultDiv.innerHTML += `<img src="${city.imageUrl}" alt="hjh">`;
+                        resultDiv.innerHTML += `<div class="photo"><img src="${city.imageUrl}" alt="hjh"></div>`;
+                        resultDiv.innerHTML += `<p><strong></strong> ${country.name},${city.name}</p>`;
                         resultDiv.innerHTML += `<p><strong>Description:</strong> ${city.description}</p>`;
                         });
                     });
                 }
                 else {
                     data[recommendation].forEach(item => {
-                        resultDiv.innerHTML += `<img src="${item.imageUrl}" alt="hjh">`;
+                        resultDiv.innerHTML += `<div class="photo"><img src="${item.imageUrl}" alt="hjh"></div>`;
+                        resultDiv.innerHTML += `<p><strong></strong> ${item.name}</p>`;
                         resultDiv.innerHTML += `<p><strong>Description:</strong> ${item.description}</p>`;
                     });
                 }
